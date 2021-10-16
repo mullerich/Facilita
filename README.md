@@ -1,5 +1,5 @@
 # Facilita
-## Principais objetivos a serem alcançados
+## Principais objetivos a serem alcançados:
 
 
 ## Coletar informações durante o período de abertura do SiSU.
