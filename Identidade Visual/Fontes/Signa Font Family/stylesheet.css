@@ -1,0 +1,168 @@
+@font-face {
+    font-family: 'Signa';
+    src: url('Signa-LightItalic.eot');
+    src: local('Signa Light Italic'), local('Signa-LightItalic'),
+        url('Signa-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('Signa-LightItalic.woff2') format('woff2'),
+        url('Signa-LightItalic.woff') format('woff'),
+        url('Signa-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Signa';
+    src: url('Signa-ExtraLight.eot');
+    src: local('Signa Extra Light'), local('Signa-ExtraLight'),
+        url('Signa-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('Signa-ExtraLight.woff2') format('woff2'),
+        url('Signa-ExtraLight.woff') format('woff'),
+        url('Signa-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Signa';
+    src: url('Signa-ExtraLightItalic.eot');
+    src: local('Signa Extra Light Italic'), local('Signa-ExtraLightItalic'),
+        url('Signa-ExtraLightItalic.eot?#iefix') format('embedded-opentype'),
+        url('Signa-ExtraLightItalic.woff2') format('woff2'),
+        url('Signa-ExtraLightItalic.woff') format('woff'),
+        url('Signa-ExtraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Signa';
+    src: url('Signa-Regular.eot');
+    src: local('Signa Regular'), local('Signa-Regular'),
+        url('Signa-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Signa-Regular.woff2') format('woff2'),
+        url('Signa-Regular.woff') format('woff'),
+        url('Signa-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Signa';
+    src: url('Signa-Light.eot');
+    src: local('Signa Light'), local('Signa-Light'),
+        url('Signa-Light.eot?#iefix') format('embedded-opentype'),
+        url('Signa-Light.woff2') format('woff2'),
+        url('Signa-Light.woff') format('woff'),
+        url('Signa-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Signa';
+    src: url('Signa-ExtraBlackItalic.eot');
+    src: local('Signa ExtraBlack Italic'), local('Signa-ExtraBlackItalic'),
+        url('Signa-ExtraBlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('Signa-ExtraBlackItalic.woff2') format('woff2'),
+        url('Signa-ExtraBlackItalic.woff') format('woff'),
+        url('Signa-ExtraBlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Signa';
+    src: url('Signa-Italic.eot');
+    src: local('Signa Italic'), local('Signa-Italic'),
+        url('Signa-Italic.eot?#iefix') format('embedded-opentype'),
+        url('Signa-Italic.woff2') format('woff2'),
+        url('Signa-Italic.woff') format('woff'),
+        url('Signa-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Signa';
+    src: url('Signa-MediumItalic.eot');
+    src: local('Signa Medium Italic'), local('Signa-MediumItalic'),
+        url('Signa-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('Signa-MediumItalic.woff2') format('woff2'),
+        url('Signa-MediumItalic.woff') format('woff'),
+        url('Signa-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Signa';
+    src: url('Signa-Bold.eot');
+    src: local('Signa Bold'), local('Signa-Bold'),
+        url('Signa-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Signa-Bold.woff2') format('woff2'),
+        url('Signa-Bold.woff') format('woff'),
+        url('Signa-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Signa';
+    src: url('Signa-Medium.eot');
+    src: local('Signa Medium'), local('Signa-Medium'),
+        url('Signa-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Signa-Medium.woff2') format('woff2'),
+        url('Signa-Medium.woff') format('woff'),
+        url('Signa-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Signa';
+    src: url('Signa-Black.eot');
+    src: local('Signa Black'), local('Signa-Black'),
+        url('Signa-Black.eot?#iefix') format('embedded-opentype'),
+        url('Signa-Black.woff2') format('woff2'),
+        url('Signa-Black.woff') format('woff'),
+        url('Signa-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Signa';
+    src: url('Signa-ExtraBlack.eot');
+    src: local('Signa Extra Black'), local('Signa-ExtraBlack'),
+        url('Signa-ExtraBlack.eot?#iefix') format('embedded-opentype'),
+        url('Signa-ExtraBlack.woff2') format('woff2'),
+        url('Signa-ExtraBlack.woff') format('woff'),
+        url('Signa-ExtraBlack.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Signa';
+    src: url('Signa-BoldItalic.eot');
+    src: local('Signa Bold Italic'), local('Signa-BoldItalic'),
+        url('Signa-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Signa-BoldItalic.woff2') format('woff2'),
+        url('Signa-BoldItalic.woff') format('woff'),
+        url('Signa-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Signa';
+    src: url('Signa-BlackItalic.eot');
+    src: local('Signa Black Italic'), local('Signa-BlackItalic'),
+        url('Signa-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('Signa-BlackItalic.woff2') format('woff2'),
+        url('Signa-BlackItalic.woff') format('woff'),
+        url('Signa-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
