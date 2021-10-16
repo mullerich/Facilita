@@ -1,5 +1,5 @@
 # Facilita
-## O Facilita é um projeto que visa ajudar estudantes a entrar em uma faculdade através do SiSU.
+## Principais objetivos a serem alcançados
 
 
 ## Coletar informações durante o período de abertura do SiSU.
