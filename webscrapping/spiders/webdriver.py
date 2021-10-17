@@ -9,8 +9,8 @@ c = Cursos()
 
 class WebDriver:
     """Configura o navegador"""
-    def __init__(self, url='', minimizado=False):
-        self.driver = helium.start_chrome(headless=minimizado)
+    def __init__(self, url='www.google.com', minimizado=False):
+        self.driver = helium.start_firefox(headless=minimizado)
         self.is_active = True
         self.html = self.driver.page_source
         self.url = url

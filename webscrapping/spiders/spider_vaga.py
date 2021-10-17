@@ -3,9 +3,9 @@ import helium
 from bs4 import BeautifulSoup
 from time import sleep
 from ferramentas import find_text, prettify_result
-from webscrapping.html_settings.html_vagas import Vagas
+from webscrapping.html_settings.html_vaga import Vaga
 
-v = Vagas()
+v = Vaga()
 
 
 class SpiderVaga(WebDriver):
@@ -56,4 +56,4 @@ class SpiderVaga(WebDriver):
 
 # TESTE!!!
 teste = SpiderVaga(['https://sisu.mec.gov.br/#/vagas/detalhe?coOferta=197384#target', 'https://sisu.mec.gov.br/#/vagas/detalhe?coOferta=200585#target'])
-prettify_result(teste.coletar_vagas())
+teste.coletar_vagas()
