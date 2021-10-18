@@ -3,6 +3,9 @@ var htmlReady = false
 
 
 /* ALERTAS */
+
+/* DESATIVANDO TEMPORARIAMENTE GERADOR DE ALERTAS
+
 let alertas = JSON.parse(alerts)
 let topo = document.getElementsByClassName('topo')[0];
 let aside = document.createElement("aside");
@@ -10,11 +13,13 @@ aside.className = 'alert';
 topo.appendChild(aside);
 let lista = document.createElement('ul');
 aside.appendChild(lista);
+
+
 for (i=0; i<alertas.length; i++) {
     let alerta = document.createElement('li');
     alerta.innerText = alertas[i];
     lista.appendChild(alerta);
-    }
+    }/*
 
 
 /* TOPO VAGA */
