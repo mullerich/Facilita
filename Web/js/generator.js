@@ -1,6 +1,21 @@
 var dados = JSON.parse(data);
 var htmlReady = false
 
+const btnMoble = document.getElementById('btn-mobile');
+
+function toggleMenu(event) {
+    if (event.type == 'touchstart') event.preventDefault()
+    const nav = document.getElementById('nav');
+    nav.classList.toggle('active')
+    const body = document.getElementsByTagName('body')[0]
+    body.style.overflowY = 'auto'
+    if (nav.getAttribute('class') == 'active') {
+        body.style.overflowY = 'clip'
+    } 
+}
+
+btnMoble.addEventListener('click', toggleMenu);
+
 
 /* ALERTAS */
 
@@ -78,25 +93,6 @@ box_pesos.appendChild(titulo_peso)
 let tabela = document.createElement('table')
 box_pesos.appendChild(tabela)
 
-/*
-let titulos = document.createElement('tr')
-tabela.appendChild(titulos)
-
-insertPeso('th', 'Redação', titulos)
-insertPeso('th', 'Ciências da Natureza e suas Tecnologias', titulos)
-insertPeso('th', 'Ciências Humanas e suas Tecnologias', titulos)
-insertPeso('th', 'Matemática e suas Tecnologias', titulos)
-insertPeso('th', 'Linguagens, Códigos e suas Tecnologias', titulos)
-
-let pesos = JSON.parse(pesos_areas)
-
-let row_pesos = document.createElement('tr')
-tabela.appendChild(row_pesos)
-insertPeso('td', pesos['redacao'], row_pesos)
-insertPeso('td', pesos['ciencias_natureza'], row_pesos)
-insertPeso('td', pesos['ciencias_humanas'], row_pesos)
-insertPeso('td', pesos['matematica'], row_pesos)
-insertPeso('td', pesos['linguagens'], row_pesos)*/
 
 let pesos = JSON.parse(pesos_areas)
 

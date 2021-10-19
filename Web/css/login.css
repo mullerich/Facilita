@@ -211,10 +211,6 @@ footer {
         display: none;
     }
 
-    main {
-        width: 90vw;
-    }
-
     nav ul {
         height: 0px;
         display: block;
