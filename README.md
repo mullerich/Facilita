@@ -1,11 +1,12 @@
 # Facilita
+## Amostra do site https://erich-muller.github.io/Facilita/Web/html/plataforma.html
 ## Principais objetivos a serem alcançados:
 
 
-## Coletar informações durante o período de abertura do SiSU.
+### Coletar informações durante o período de abertura do SiSU.
 * Através de **webscrapping** com **Python** coletar notas parciais, incluindo data, cotas e outros.
 * Coletar o termo de adesão de cada período de cada faculdade.
-## Ter uma plataforma para os vestibulandos com as seguintes funcionalidades:
+### Ter uma plataforma para os vestibulandos com as seguintes funcionalidades:
 * O estudante poderá inserir seu resultado da prova do ENEM, suas cotas e ter esses dados salvos;
 * O estudante poderá buscar por seus interesses de acordo com localidade, curso, intituição e afins;
 * O estudante terá acesso à sua média previamente calculada com os pesos do termo de adesão;
