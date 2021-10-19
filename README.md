@@ -1,6 +1,4 @@
 # Facilita
-
-## Amostra do site https://erich-muller.github.io/Facilita/Web/html/plataforma.html
 ## Principais objetivos a serem alcançados:
 
 
