@@ -77,6 +77,8 @@ titulo_peso.innerText = 'Pesos'
 box_pesos.appendChild(titulo_peso)
 let tabela = document.createElement('table')
 box_pesos.appendChild(tabela)
+
+/*
 let titulos = document.createElement('tr')
 tabela.appendChild(titulos)
 
@@ -94,7 +96,31 @@ insertPeso('td', pesos['redacao'], row_pesos)
 insertPeso('td', pesos['ciencias_natureza'], row_pesos)
 insertPeso('td', pesos['ciencias_humanas'], row_pesos)
 insertPeso('td', pesos['matematica'], row_pesos)
-insertPeso('td', pesos['linguagens'], row_pesos)
+insertPeso('td', pesos['linguagens'], row_pesos)*/
+
+let pesos = JSON.parse(pesos_areas)
+
+let l1 = document.createElement('tr')
+insertPeso('td', 'Redação', l1)
+insertPeso('td', pesos['redacao'], l1)
+let l2 = document.createElement('tr')
+insertPeso('td', 'Ciências da Natureza e suas Tecnologias', l2)
+insertPeso('td', pesos['ciencias_natureza'], l2)
+let l3 = document.createElement('tr')
+insertPeso('td', 'Ciências Humanas e suas Tecnologias', l3)
+insertPeso('td', pesos['ciencias_humanas'], l3)
+let l4 = document.createElement('tr')
+insertPeso('td', 'Matemática e suas Tecnologias', l4)
+insertPeso('td', pesos['matematica'], l4)
+let l5 = document.createElement('tr')
+insertPeso('td', 'Linguagens, Códigos e suas Tecnologias', l5)
+insertPeso('td', pesos['linguagens'], l5)
+
+tabela.appendChild(l1)
+tabela.appendChild(l2)
+tabela.appendChild(l3)
+tabela.appendChild(l4)
+tabela.appendChild(l5)
 
 let sua_media = document.createElement('h4')
 sua_media.innerText = ('Sua média: ')
@@ -105,7 +131,7 @@ sua_media.appendChild(media_aluno)
 box_pesos.appendChild(sua_media)
 
 vagas = document.createElement('div')
-vagas.className = vagas
+vagas.className = 'vagas'
 main.appendChild(vagas)
 
 /* VAGAS */

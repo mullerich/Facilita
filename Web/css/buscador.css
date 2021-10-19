@@ -294,6 +294,10 @@ footer {
         display: flex;
     }
 
+    main {
+        width: 90vw;
+    }
+
     body.pause {
         overflow-y: clip;
     }

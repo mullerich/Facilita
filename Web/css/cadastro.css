@@ -85,13 +85,13 @@ div.form-title {
 }
 
 div.form-title h1 {
-    font-size: 42px;
+    font-size: 2rem;
     padding-bottom: 5px;
 }
 
 div.form-title p {
     color: var(--cor7);
-    font-size: 22px;
+    font-size: 1.4rem;
 }
 
 div.form-title a {
@@ -142,12 +142,13 @@ form input {
     text-decoration: none;
     display: block;
     background: var(--cor6);
-    width: 100%;
+    width: 97%;
 }
 
 form label[for="remember"], form input[type=checkbox] {
     display: inline;
     width: unset;
+    padding: 0px 10px;
 }
 
 form label {
@@ -157,6 +158,7 @@ form label {
 }
 
 form div.form-data {
+    margin-right: 15px;
     display: flex;
     justify-content: space-between;
 
@@ -186,7 +188,7 @@ form button {
     display: block;
     padding: 8px 5px;
     border-radius: 8px;
-    width: 104%;
+    width: 99%;
     cursor: pointer;
     margin: 15px 0px;
 }
@@ -216,6 +218,14 @@ footer {
 @media (max-width:600px) {
     #btn-mobile {
         display: flex;
+    }
+
+    img.icone {
+        display: none;
+    }
+
+    main {
+        width: 90vw;
     }
 
     nav ul {
