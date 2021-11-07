@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/user.css">
+        <title>Facilita</title>
+    </head>
+    <body>
+        <div class="topo">
+            <header id="nav">
+                <a href="#"><img src="../media/facilita.png" alt="Logo Facilita"></a>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="cadastro.html">Cadastrar-me</a>
+                        </li>
+                        <li>
+                            <a href="main.html">Quem somos</a>
+                        </li>
+                        <li>
+                            <a href="plataforma.html">Plataforma</a>
+                        </li>
+                    </ul>
+                </nav>
+                <button id="btn-mobile"><span id="hamburguer"></span></button>
+            </header>
+        </div>
+        <main>
+            <div class="card-sup">
+                <h1>Nome Sobrenome</h1>
+            </div>
+            <div class="card-bot">
+                <table>
+                    <tr><td>Redação</td><td>650,00</td></tr>
+                    <tr><td>Ciências da Natureza e suas Tecnologias</td><td>660,00</td></tr>
+                    <tr><td>Ciências Humanas e suas Tecnologias</td><td>665,00</td></tr>
+                    <tr><td>Matemática e suas Tecnologias</td><td>655,00</td></tr>
+                    <tr><td>Linguagens, Códigos e suas Tecnologias</td><td>660,00</td></tr>
+                </table>
+                <div class="cotas">
+                    <div class="coluna">
+                        <div class="cota">
+                            <input type="checkbox" name="" id="ens-pub"><label for="ens-pub">Ensino Público</label>
+                        </div>
+                        <div class="cota">
+                            <input type="checkbox" name="" id="baixa-renda"><label for="baixa-renda">Baixa Renda</label>
+                        </div>
+                    </div>
+                    
+                    <div class="coluna">
+                        <div class="cota">
+                            <input type="checkbox" name="" id="pr-par-ind"><label for="pr-par-ind">Pretos Pardos e Indígenas</label> 
+                        </div>
+                        <div class="cota">
+                            <input type="checkbox" name="" id="deficiente"><label for="deficiente">Deficiente</label> 
+                        </div> 
+                    </div>
+                         
+                </div>
+                <details>
+                    <summary>Entenda cada cota</summary>
+                    <p>Ao total existem 8 cotas compostas por 4 critérios</p> 
+                    <ul>
+                        <li><strong>Ensino Público:</strong> Candidatos que cursara, todo o ensino médio em escolas públicas.</li>
+                        <li><strong>Baixa Renda:</strong> Candidatos com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo.</li>
+                        <li><strong>Pretos Pardos ou Indígenas:</strong> Candidatos autodeclarados pretos, pardos ou indígenas</li>
+                        <li><strong>Deficiente:</strong> Candidatos com deficiência</li>
+                    </ul>
+                </details>
+            </div>
+        </main>
+        <footer>
+            <p>Facilita&reg;</p>
+        </footer>
+    </body>
+<script src="../css/base.js"></script>
+</html>
