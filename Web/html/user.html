@@ -32,34 +32,39 @@
                 <h1>Nome Sobrenome</h1>
             </div>
             <div class="card-bot">
-                <table>
-                    <tr><td>Redação</td><td>650,00</td></tr>
-                    <tr><td>Ciências da Natureza e suas Tecnologias</td><td>660,00</td></tr>
-                    <tr><td>Ciências Humanas e suas Tecnologias</td><td>665,00</td></tr>
-                    <tr><td>Matemática e suas Tecnologias</td><td>655,00</td></tr>
-                    <tr><td>Linguagens, Códigos e suas Tecnologias</td><td>660,00</td></tr>
-                </table>
-                <div class="cotas">
-                    <div class="coluna">
-                        <div class="cota">
-                            <input type="checkbox" name="" id="ens-pub"><label for="ens-pub">Ensino Público</label>
+                <form action="#" method="post">
+                    <table>
+                        <tr><td>Redação</td><td><input type="number" disabled id="red" value="650", min="0" max="1000" step="0.1"></td></tr>
+                        <tr><td>Ciências da Natureza e suas Tecnologias</td><td><input type="number" disabled id="red" value="650", min="0" max="1000" step="0.1"></td></tr>
+                        <tr><td>Ciências Humanas e suas Tecnologias</td><td><input type="number" disabled id="red" value="650", min="0" max="1000" step="0.1"></td></tr>
+                        <tr><td>Matemática e suas Tecnologias</td><td><input type="number" disabled id="red" value="650", min="0" max="1000" step="0.1"></td></tr>
+                        <tr><td>Linguagens, Códigos e suas Tecnologias</td><td><input type="number" disabled id="red" value="650", min="0" max="1000" step="0.1"></td></tr>
+                    </table>
+                    <div class="cotas">
+                        <div class="coluna">
+                            <div class="cota">
+                                <input type="checkbox" disabled name="" id="ens-pub"><label for="ens-pub">Ensino Público</label>
+                            </div>
+                            <div class="cota">
+                                <input type="checkbox" disabled name="" id="baixa-renda"><label for="baixa-renda">Baixa Renda</label>
+                            </div>
                         </div>
-                        <div class="cota">
-                            <input type="checkbox" name="" id="baixa-renda"><label for="baixa-renda">Baixa Renda</label>
+                        
+                        <div class="coluna">
+                            <div class="cota">
+                                <input type="checkbox" disabled name="" id="pr-par-ind"><label for="pr-par-ind">Pretos Pardos e Indígenas</label> 
+                            </div>
+                            <div class="cota">
+                                <input type="checkbox" disabled name="" id="deficiente"><label for="deficiente">Deficiente</label> 
+                            </div> 
                         </div>
                     </div>
-                    
-                    <div class="coluna">
-                        <div class="cota">
-                            <input type="checkbox" name="" id="pr-par-ind"><label for="pr-par-ind">Pretos Pardos e Indígenas</label> 
-                        </div>
-                        <div class="cota">
-                            <input type="checkbox" name="" id="deficiente"><label for="deficiente">Deficiente</label> 
-                        </div> 
-                    </div>
-                         
-                </div>
-                <details>
+                    <button type="submit" id="salvar" hidden>Salvar</button>
+                </form>
+                <button onclick="alert('Ao total existem 8 cotas compostas por 4 critérios. \n\n- Ensino Público: Candidatos que cursaram, todo o ensino médio em escolas públicas.\n- Baixa Renda: Candidatos com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo.\n- Pretos Pardos ou Indígenas: Candidatos autodeclarados pretos, pardos ou indígenas\n- Deficiente: Candidatos com deficiência')">Entenda cada cota</button>
+                    <button id="edit-btn">Editar Dados</button>
+                    <button id="cancel" hidden>Cancelar</button>
+                <!--<details>
                     <summary>Entenda cada cota</summary>
                     <p>Ao total existem 8 cotas compostas por 4 critérios</p> 
                     <ul>
@@ -68,12 +73,12 @@
                         <li><strong>Pretos Pardos ou Indígenas:</strong> Candidatos autodeclarados pretos, pardos ou indígenas</li>
                         <li><strong>Deficiente:</strong> Candidatos com deficiência</li>
                     </ul>
-                </details>
+                </details>-->
             </div>
         </main>
         <footer>
             <p>Facilita&reg;</p>
         </footer>
     </body>
-<script src="../css/base.js"></script>
+<script src="../js/user.js"></script>
 </html>

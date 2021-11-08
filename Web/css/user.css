@@ -111,13 +111,33 @@ div.card-bot {
 }
 
 table {
+    border-collapse: collapse;
     width: 80vw;
     max-width: 500px;
 }
 
 td {
+    padding-left: 25px;
+}
+
+tr:nth-child(even) {
+    background: #161616;
+}
+
+input[type=checkbox] {
+    padding: 0px 10px;
+}
+
+input[type=number] {
+    border: none;
+    background: transparent;
+    color: var(--cor3);
+    font-size: 1.2em;
     padding: 15px;
-    border-bottom: 1px solid var(--cor7);
+}
+
+input[type=number]:hover {
+    background: var(--cor1);
 }
 
 div.cotas {
@@ -137,10 +157,6 @@ div.cota {
 
 label {
     margin-left: 8px;
-}
-
-input[type=checkbox] {
-    padding: 0px 10px;
 }
 
 details {
