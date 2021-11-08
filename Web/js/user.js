@@ -8,23 +8,33 @@ function toggleMenu(event) {
 
 btnMoble.addEventListener('click', toggleMenu);
 
-const editInfosBtn = document.getElementById('edit-btn');
-const cancel_btn = document.getElementById('cancel')
+var editInfosBtn = document.getElementById('edit-btn');
+var cancel_btn = document.getElementById('cancel');
 
-function toggleInputs(status) {
+function disableInputs() {
     let inputs = document.getElementsByTagName('input')
     for (i=0; i<inputs.length; i++) {
-        inputs[i].disabled = status
+        inputs[i].disabled = true
     }
 
-    console.log(status)
-
-    editInfosBtn.hidden = status
-    cancel_btn.hidden = !status
-    salvar_btn = document.getElementById('salvar')
-    salvar_btn.hidden = !status
+    editInfosBtn.hidden = false
+    cancel_btn.hidden = true
+    var salvar_btn = document.getElementById('salvar')
+    salvar_btn.hidden = true
 }
 
-cancel_btn.addEventListener('click', toggleInputs, true)
-editInfosBtn.addEventListener('click', toggleInputs, false)
+function enableInputs() {
+    let inputs = document.getElementsByTagName('input')
+    for (i=0; i<inputs.length; i++) {
+        inputs[i].disabled = false
+    }
+
+    editInfosBtn.hidden = true
+    cancel_btn.hidden = false
+    var salvar_btn = document.getElementById('salvar')
+    salvar_btn.hidden = false
+}
+
+cancel_btn.addEventListener('click', disableInputs)
+editInfosBtn.addEventListener('click', enableInputs)
 
