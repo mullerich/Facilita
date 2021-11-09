@@ -92,12 +92,13 @@ div.card-sup {
     max-width: 500px;
     height: 75px;
     border-radius: 15px 15px 0px 0px;
-    background-color: var(--cor6);
+    background-color: var(--cor1);
     box-shadow: 2px 2px 2px rgb(0 0 0 / 45%);
 }
 
 div.card-sup h1 {
     padding-top: 20px;
+    color: var(--cor6);
 }
 
 div.card-bot {
@@ -120,7 +121,7 @@ td {
     padding-left: 25px;
 }
 
-tr:nth-child(even) {
+tr:nth-child(odd) {
     background: #161616;
 }
 
@@ -134,10 +135,6 @@ input[type=number] {
     color: var(--cor3);
     font-size: 1.2em;
     padding: 15px;
-}
-
-input[type=number]:hover {
-    background: var(--cor1);
 }
 
 div.cotas {
@@ -159,6 +156,30 @@ label {
     margin-left: 8px;
 }
 
+div.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    margin-right: 15px;
+    border: none;
+    background:var(--cor6);
+    color: var(--cor3);
+    font-size: 1.2em;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+button:hover {
+    text-decoration: underline;
+}
+
+button#salvar, button#edit-btn {
+    background-color: var(--cor1);
+}
+
+/*
 details {
     margin: 0px 0px 15px 30px;
 }
@@ -173,7 +194,7 @@ details ul {
 
 details li {
     margin-bottom: 10px;
-}
+}*/
 
 /* MOBILE */
 

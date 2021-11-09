@@ -59,11 +59,14 @@
                             </div> 
                         </div>
                     </div>
-                    <button type="submit" id="salvar" hidden>Salvar</button>
+                    <div class="buttons">
+                        <button type="button" id="desc-cotas" onclick="alert('Ao total existem 8 cotas compostas por 4 critérios. \n\n- Ensino Público: Candidatos que cursaram, todo o ensino médio em escolas públicas.\n- Baixa Renda: Candidatos com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo.\n- Pretos Pardos ou Indígenas: Candidatos autodeclarados pretos, pardos ou indígenas\n- Deficiente: Candidatos com deficiência')">Entenda as cotas</button>
+                        <button id="cancel" hidden type="button">Cancelar</button>
+                        <button type="submit" id="salvar" hidden>Salvar</button>
+                        <button id="edit-btn" type="button">Editar Dados</button>
+                    </div>
                 </form>
-                <button onclick="alert('Ao total existem 8 cotas compostas por 4 critérios. \n\n- Ensino Público: Candidatos que cursaram, todo o ensino médio em escolas públicas.\n- Baixa Renda: Candidatos com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo.\n- Pretos Pardos ou Indígenas: Candidatos autodeclarados pretos, pardos ou indígenas\n- Deficiente: Candidatos com deficiência')">Entenda cada cota</button>
-                    <button id="edit-btn">Editar Dados</button>
-                    <button id="cancel" hidden>Cancelar</button>
+
                 <!--<details>
                     <summary>Entenda cada cota</summary>
                     <p>Ao total existem 8 cotas compostas por 4 critérios</p> 
