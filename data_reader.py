@@ -36,17 +36,17 @@ def leitor(nome_arquivo, ano, edicao):
     linhas = datasheet.max_row
 
     dados = {}
-    for c in range(1, 5+1):
+    for c in range(1, colunas+1):
         dados[f"{datasheet.cell(1, c).value}"] = []
 
-    print(dados)
-    for col in range(1, 5+1):
+    for col in range(1, colunas+1):
         titulo_coluna = datasheet.cell(1, col).value
-        for row in range(2, 5+1):
-            print(titulo_coluna, datasheet.cell(row=row, column=col).value)
+        print(col)
+        for row in range(2, linhas+1):
+            print(row)
             dados[titulo_coluna].append(datasheet.cell(row=row, column=col).value)
 
     return dados
 
 
-print(leitor('2019_2.xlsx', 2019, 2))
+print(leitor('planilhas/2019_2.xlsx', 2019, 2))
