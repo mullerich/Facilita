@@ -1,8 +1,8 @@
 """
 Esse programa tem o intuito de ler as tabelas de relatório disponibilizadas pelo INEP
-https://sisu.mec.gov.br/#/relatorio#onepage e coletar os dados
+https://sisu.mec.gov.br/#/relatorio#onepage, coletar os dados e transformar em 'json'
 
-Os dados importantes a serem extraídos são:
+Os dados a serem extraídos são:
 
 NU_ANO: Ano do processo seletivo
 NU_EDICAO:	Número da edição do processo seletivo no ano de referência
@@ -29,24 +29,47 @@ QT_INSCRICAO:	Quantidade de inscrições para a modalidade
 
 from openpyxl import load_workbook
 
-def leitor(nome_arquivo, ano, edicao):
+def leitor(nome_arquivo, nome_folha, colunas=[]):
+    """
+    Lê um arquivo excel e retorna os dados separados por coluna.
+
+    Exemplo de retorno:
+        {
+            NU_ANO: [2019, 2019],
+            DS_GRAU: ['Bacharelado', 'Licenciatura'],
+            QT_INSCRICAO: [234, 726]
+        }
+
+    Itens de mesma posição fazem parte do mesmo dado.
+    """
+
     excel_data = load_workbook(nome_arquivo, read_only=True)
-    datasheet = excel_data[f'inscricao_{ano}_{edicao}']     # Folha inscricao_2019_2
-    colunas = datasheet.max_column
-    linhas = datasheet.max_row
-
+    datasheet = excel_data[nome_folha]     # Folha inscricao_2019_2
+    num_colunas = datasheet.max_column
+    num_linhas = datasheet.max_row
+    num_linhas = 5
+    
     dados = {}
-    for c in range(1, colunas+1):
-        dados[f"{datasheet.cell(1, c).value}"] = []
+    if colunas == []:
+        colunas_usadas = [x for x in range(1, num_colunas+1)]
+        for c in range(1, num_colunas+1):
+            dados[f"{datasheet.cell(1, c).value}"] = []
+    
+    else:
+        colunas_usadas = []
+        for c in range(1, num_colunas+1):
+            if datasheet.cell(1, c).value in colunas:
+                dados[f"{datasheet.cell(1, c).value}"] = []
+                colunas_usadas.append(c)
 
-    for col in range(1, colunas+1):
+    for col in colunas_usadas:
         titulo_coluna = datasheet.cell(1, col).value
-        print(col)
-        for row in range(2, linhas+1):
-            print(row)
+        for row in range(2, num_linhas+2):
             dados[titulo_coluna].append(datasheet.cell(row=row, column=col).value)
 
     return dados
 
 
-print(leitor('planilhas/2019_2.xlsx', 2019, 2))
+# print(leitor('planilhas/2019_2.xlsx', 'inscricao_2019_2', ['NU_ANO', 'NU_EDICAO', 'CO_IES']))
+
+# leitura = leitor('planilhas/2019_2.xlsx', 'inscricao_2019_2', ['NU_ANO', 'NU_EDICAO', 'CO_IES', 'NO_IES', 'SG_IES', 'DS_ORGANIZACAO_ACADEMICA', 'DS_CATEGORIA_ADM', 'NO_CAMPUS', 'NO_MUNICIPIO_CAMPUS', 'SG_UF_CAMPUS', 'DS_REGIAO_CAMPUS', 'CO_IES_CURSO', 'NO_CURSO', 'DS_GRAU', 'DS_TURNO'])
