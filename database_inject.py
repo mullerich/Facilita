@@ -23,7 +23,6 @@ def construtor_sql(tabela, colunas, dados):
 def insert(tabela, coluna, dados):
     cursor = connection.cursor()
     sql = construtor_sql(tabela, coluna, dados)
-    print(sql)
     cursor.execute(sql)  
     connection.commit()
     

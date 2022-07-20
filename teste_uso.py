@@ -13,10 +13,11 @@ def teste_leitor(a, b):
 
 def teste_database_inject(a, b):
     for x in range(a, b):
+        print(f"Em andamento... ({a}/{b})", end='\r')
         dados = leitor(planilha, folha, x, colunas)
         insert('dados_base', colunas, dados)
 
 
 # teste_leitor(2, 10)
-teste_database_inject(3, 10)
+teste_database_inject(2, 11943)
 """ FUNCIONA, entretanto os dados estão repetidos"""
