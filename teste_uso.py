@@ -12,11 +12,18 @@ def teste_leitor(a, b):
 
 
 def teste_database_inject(a, b):
+    datasheet = open_excel(planilha, folha)
     for x in range(a, b):
         print(f"Em andamento... ({a}/{b})", end='\r')
-        datasheet = open_excel(planilha, folha)
         dados = leitor(datasheet, x, colunas)
-        insert('dados_base', colunas, dados)
+        try:
+            insert('dados_base', colunas, dados)
+        except Exception as e:
+            if "Duplicate entry" in e.args[1]:  # Caso o dado já esteja no banco de dados
+                pass 
+            else:
+                print("[ERRO]", e)
+                break
 
 
 # teste_leitor(2, 10)
