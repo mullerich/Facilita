@@ -10,7 +10,7 @@ def lista_para_texto(lista, crase=True):
         if crase:
             texto += f'`{elem}`, '
         else:
-            texto += f"'{elem}', "
+            texto += f'"{elem}", '
     
     return texto[:-2]
 
