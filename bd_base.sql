@@ -2,7 +2,7 @@ create database adesao_sisu
 default character set utf8
 default collate utf8_general_ci;
 
-use adesao_sisu;
+use inscricoes_sisu;
 
 create table dados_base (
 	-- INFORMAÇÕES SOBRE FACULDADES, CAMPUS, REGIÕES, etc.
@@ -22,3 +22,14 @@ create table dados_base (
     DS_GRAU varchar(15),
     DS_TURNO varchar(10)
 ) default charset = utf8;
+
+alter table dados_base
+modify column CO_IES_CURSO varchar(10) unique;
+
+select count(NU_ANO) from dados_base;
+
+select * from dados_base group by CO_IES_CURSO order by CO_IES_CURSO;
+
+select * from dados_base where NO_CURSO = 'TURISMO' order by CO_IES_CURSO;
+
+truncate dados_base;

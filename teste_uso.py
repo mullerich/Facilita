@@ -1,4 +1,4 @@
-from data_reader import leitor
+from data_reader import leitor, open_excel
 from database_inject import *
 
 
@@ -14,7 +14,8 @@ def teste_leitor(a, b):
 def teste_database_inject(a, b):
     for x in range(a, b):
         print(f"Em andamento... ({a}/{b})", end='\r')
-        dados = leitor(planilha, folha, x, colunas)
+        datasheet = open_excel(planilha, folha)
+        dados = leitor(datasheet, x, colunas)
         insert('dados_base', colunas, dados)
 
 
