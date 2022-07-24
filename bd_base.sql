@@ -19,7 +19,7 @@ create table dados_base (
     SG_UF_CAMPUS varchar(2),
     DS_REGIAO_CAMPUS varchar(15),
     CO_IES_CURSO varchar(10) unique,
-    NO_CURSO varchar(80),
+    NO_CURSO varchar(120),
     DS_GRAU varchar(30),
     DS_TURNO varchar(10),
     primary key (id)
@@ -27,6 +27,10 @@ create table dados_base (
 
 select count(ID) from dados_base;
 select * from dados_base;
+
+select * from dados_base where NU_ANO = 2021 order by CO_IES_CURSO;
+
+select * from dados_base where NO_CURSO = 'QUÍMICA' and CO_IES = 1811;
 
 drop table dados_base;
 

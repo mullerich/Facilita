@@ -14,7 +14,7 @@ def lista_para_texto(lista):
 
 
 def construtor_sql(tabela, colunas, dados):
-    sql = f"INSERT INTO {tabela} VALUES (default, {lista_para_texto(dados)})"
+    sql = f"INSERT INTO {tabela} {f'({lista_para_texto(colunas)})' if colunas else ''} VALUES (default, {lista_para_texto(dados)})"
     return sql
 
 
@@ -25,7 +25,7 @@ def insert(tabela, coluna, dados):
     connection.commit()
     
 
-def insert_dados_base(tabela, coluna, dados):
+def insert_dados_base(tabela, dados, coluna=None):
     """
     Insere no banco de dados registros de cursos que não são duplicáveis
     """
