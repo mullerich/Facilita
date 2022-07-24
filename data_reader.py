@@ -2,35 +2,20 @@
 Esse programa tem o intuito de ler as tabelas de relatório disponibilizadas pelo INEP
 https://sisu.mec.gov.br/#/relatorio#onepage, coletar os dados e transformar em lista
 """
-
-from openpyxl import load_workbook
-from pandas import read_excel
-
-def open_excel(nome_arquivo, nome_folha, colunas=[]):
-    return read_excel(nome_arquivo, nome_folha, skiprows=1, usecols=colunas)
+from pandas import read_excel, ExcelFile
+import os
 
 
-def leitor(datasheet):
-    data = datasheet.values
-    return list(data)
+def leitor_xlsx(nome_arquivo, colunas):
+    nome_folha = ExcelFile(nome_arquivo).sheet_names[1]
+    colunas_lidas = list(read_excel(nome_arquivo, nome_folha, nrows=1).columns)
+    colunas_usadas = [n for n, e in enumerate(colunas_lidas) if e in colunas]
+    data = read_excel(nome_arquivo, nome_folha, usecols=colunas_usadas, skiprows=1).values
+    return data
 
 
-def which_column(nome_arquivo, nome_folha, colunas):
-    """
-    Determina o valor numérico de colunas de uma folha de planilha
-    """
-    excel_data = load_workbook(nome_arquivo, read_only=True)
-    datasheet = excel_data[nome_folha]  
-    num_colunas = datasheet.max_column
-    colunas_usadas = []
-    
-    if colunas == []:
-        colunas_usadas = None
-
-    else:
-        for c in range(1, num_colunas+1):
-            if datasheet.cell(1, c).value in colunas:
-                colunas_usadas.append(c-1)
-    
-    return colunas_usadas
+def listar_xlsx(path):
+    """Lista todos os arquivos xlsx em um determinado diretório."""
+    planilhas = [arq for arq in os.listdir(path) if arq.endswith('.xlsx')]
+    return planilhas
 
