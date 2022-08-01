@@ -12,14 +12,13 @@ create table vagas (
     NO_CAMPUS varchar(100),
     NO_MUNICIPIO_CAMPUS varchar(40),
     SG_UF_CAMPUS varchar(2),
-    DS_REGIAO_CAMPUS varchar(15),
+    DS_REGIAO varchar(15),
     CO_IES_CURSO varchar(10),
     NO_CURSO varchar(120),
     DS_GRAU varchar(30),
     DS_TURNO varchar(10),
     DS_PERIODICIDADE varchar(10),
     QT_SEMESTRE tinyint,
-    NU_VAGAS_AUTORIZADAS tinyint,
     QT_VAGAS_OFERTADAS tinyint,
     NU_PERCENTUAL_BONUS SMALLINT,
     TP_MODALIDADE varchar(70),
@@ -36,5 +35,12 @@ create table vagas (
 	NOTA_MINIMA_CIENCIAS_NATUREZA smallint,
 	NU_MEDIA_MINIMA_ENEM smallint,
 	NU_NOTACORTE smallint,
-    QT_INSCRICAO smallint
+    QT_INSCRICAO smallint,
+    primary key (ID)
 ) default charset = utf8;
+
+select * from vagas;
+drop table vagas;
+# truncate vagas;
+
+select count(id) from vagas;

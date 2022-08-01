@@ -3,16 +3,18 @@ from bd.database_inject import *
 from bd.database_consult import request
 
 
-colunas = ['NU_ANO', 'NU_EDICAO', 'CO_IES', 'NO_IES', 'SG_IES', 'DS_ORGANIZACAO_ACADEMICA', 'DS_CATEGORIA_ADM', 'NO_CAMPUS', 'NO_MUNICIPIO_CAMPUS', 'SG_UF_CAMPUS', 'DS_REGIAO_CAMPUS', 'CO_IES_CURSO', 'NO_CURSO', 'DS_GRAU', 'DS_TURNO']
-path = './planilhas/vagas'
+colunas = ['NU_ANO', 'NU_EDICAO', 'CO_IES', 'NO_IES', 'SG_IES', 'DS_ORGANIZACAO_ACADEMICA', 'DS_CATEGORIA_ADM', 'NO_CAMPUS', 'NO_MUNICIPIO_CAMPUS', 'SG_UF_CAMPUS', 'DS_REGIAO', 'CO_IES_CURSO', 'NO_CURSO', 'DS_GRAU', 'DS_TURNO']
+path = './planilhas'
 
 def teste_database_inject():
     print('\nIniciando!\n')
-    for planilha in listar_xlsx(path):
+    for planilha in listar_xlsx(path+'/vagas/'):
         print(f'\nLendo planilha {planilha}...')
-        dados = leitor_xlsx(path+'/'+planilha)   
-        insert_dados_base("vagas", dados)
+        dados = leitor_xlsx(path+'/vagas/'+planilha, colunas)   
+        insert_dados_base("vagas", dados, colunas)
+        
         print('OK!')                    
+    
     print('\nConcluído!')
 
 
