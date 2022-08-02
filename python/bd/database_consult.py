@@ -12,8 +12,6 @@ def sql_constructor(select='*', _from='', where=None, group_by=None, order_by=No
 def request(select='*', _from='', where=None, group_by=None, order_by=None, limit=None):
     sql = sql_constructor(select, _from, where, group_by, order_by, limit)
     cursor.execute(sql)
-    result = cursor.fetchall()
+    result = cursor.fetchall() if limit != 1 else cursor.fetchone()
     return result
 
-
-#request('*', 'dados_base', where="'ID'=10000", limit=10)
