@@ -75,14 +75,6 @@ def insert_dados_base(tabela, dados, coluna=None):
         reiniciar = True
         while reiniciar:
             try:
-                if len(dado) != len(coluna):    # Coluna bonus vazia
-                    dado = list(dado)
-                    dado.insert(18, "0")
-                else:
-                    if math.isnan(dado[18]):
-                        dado[18] = 0
-                if math.isnan(dado[17]):
-                    dado[17] = 0
                 insert(tabela, coluna, dado)
                 reiniciar = False
             except Exception as e:

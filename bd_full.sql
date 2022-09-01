@@ -17,14 +17,14 @@ create table vagas (
     NO_CURSO varchar(120),
     DS_GRAU varchar(30),
     DS_TURNO varchar(10),
-    DS_PERIODICIDADE varchar(10),
+    DS_PERIODICIDADE varchar(15),
     QT_SEMESTRE tinyint,
-    QT_VAGAS_OFERTADAS tinyint,
+    QT_VAGAS_OFERTADAS smallint,
     NU_PERCENTUAL_BONUS SMALLINT,
     TP_MODALIDADE varchar(70),
-    DS_MOD_CONCORRENCIA tinytext,
+    DS_MOD_CONCORRENCIA varchar(1000),
     PESO_REDACAO tinyint,
-    NOTA_MINIMA smallint,
+    NOTA_MINIMA_REDACAO smallint,
     PESO_LINGUAGENS tinyint,
 	NOTA_MINIMA_LINGUAGENS smallint,
 	PESO_MATEMATICA tinyint,
@@ -39,8 +39,14 @@ create table vagas (
     primary key (ID)
 ) default charset = utf8;
 
-select * from vagas;
+select * from vagas where NU_ANO=2019 and NU_EDICAO=1 and CO_IES_CURSO=96867;
 drop table vagas;
-# truncate vagas;
+truncate vagas;
+
+select * from vagas where NU_ANO = 2022 and NU_PERCENTUAL_BONUS != 0;
+desc vagas;
+
+alter table vagas modify column DS_PERIODICIDADE varchar(15);
+insert into vagas values (default, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 
 select count(id) from vagas;
