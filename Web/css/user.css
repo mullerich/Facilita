@@ -211,7 +211,7 @@ details li {
 footer {
     background-color: var(--cor6);
     color: var(--cor7);
-    padding: 50px 0px;
+    padding: 20px 0px;
     display: flex;
     justify-content: center;
 }

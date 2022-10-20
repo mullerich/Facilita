@@ -81,17 +81,17 @@ body {
 div.form-title {
     color: var(--cor3);
     text-align: center;
-    padding: 50px 0px 50px;
+    margin: 30px 15px;
 }
 
 div.form-title h1 {
-    font-size: 2rem;
+    font-size: 1.6rem;
     padding-bottom: 5px;
 }
 
 div.form-title p {
     color: var(--cor7);
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 
 div.form-title a {
@@ -157,6 +157,16 @@ form label {
     color: var(--cor7);
 }
 
+div.form-title h1 {
+    font-size: 1.8rem;
+    padding-bottom: 5px;
+}
+
+div.form-title p {
+    color: var(--cor7);
+    font-size: 1.4rem;
+}
+
 form div.form-data {
     margin-right: 15px;
     display: flex;
@@ -194,10 +204,10 @@ form button {
 }
 
 footer {
-    margin-top: 50px;
+    margin-top: 30px;
     background-color: var(--cor6);
     color: var(--cor7);
-    padding: 50px 0px;
+    padding: 15px 0px;
     display: flex;
     justify-content: center;
     width: 100vw;
@@ -287,5 +297,45 @@ footer {
         top: -7px;
     }
 
+    div.form-title h1 {
+        font-size: 1.6rem;
+    }
+    
+    div.form-title p {
+        font-size: 1.2rem;
+    }
+
+}
+
+@media (max-height: 685px) {
+    div.form-title {
+        color: var(--cor3);
+        text-align: center;
+        margin: 15px;
+    }
+
+    aside.alert ul {
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    p {
+        font-size: 1rem;
+    } 
+    form label {
+        font-size: 12px;
+        padding: 6px 4px 3px;
+    }
+
+    form input {
+        padding: 5px;
+    }
+
+    form div.data-nasc select {
+        padding: 5px;
+    }
 }
 
