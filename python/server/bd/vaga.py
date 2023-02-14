@@ -39,7 +39,7 @@ class Filtros():
         self.args = args
         self.sql = None
 
-    def do_usuario(self, aluno_obj: Aluno) -> list:
+    def do_usuario(self, aluno_obj) -> list:
         # Recebe um objeto Aluno e aplica suas preferências no filtro
         attrs = {
             'NO_CURSO': aluno_obj.cursos,
