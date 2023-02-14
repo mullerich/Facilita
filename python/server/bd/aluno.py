@@ -37,6 +37,7 @@ class Aluno():
 
     def __init__(self, _id):
         dados = buscar(_id)
+        self.dados = dados
         self.id = dados[0]
         self.nome = dados[1]
         self.nascimento = dados[2]
@@ -44,12 +45,13 @@ class Aluno():
         self.senha = dados[4]
 
         self.tipo_conta = dados[5]
-        self.cidades = dados[6]
-        self.notas = dados[7]
-        self.turnos = dados[8]
-        self.cotas = dados[9]
-        self.grau = dados[10]
-        self.pendencias = dados[11]
+        self.cursos = dados[6]
+        self.cidades = dados[7]
+        self.notas = dados[8]
+        self.turnos = dados[9]
+        self.cotas = dados[10]
+        self.grau = dados[11]
+        self.pendencias = dados[12]
 
 
     def alterar(self, attrs):
@@ -59,4 +61,18 @@ class Aluno():
     def descricao(self):
         # Traz uma descrição resumida e em linguagem humana sobre o aluno
         print(f'O aluno {self.nome} (id={self.id}), nascido em {self.nascimento}, possui uma conta {self.tipo_conta}. Suas cidades de interesse são {self.cidades}')
+        print(self.dados)
 
+
+"""attrs = {
+'cidades': '["Nova Friburgo", "Florestal", "Rio de Janeiro"]',
+'turnos': '["Vespertino", "Matutino", "Integral"]',
+'grau': '["Licenciatura", "Área Básica de Ingresso (ABI)"]'
+}
+
+q2 = {
+'cursos': '["Matemática", "História"]'
+}
+
+erich = Aluno(1)
+erich.alterar(q2)"""
