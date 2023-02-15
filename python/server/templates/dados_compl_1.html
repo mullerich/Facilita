@@ -11,7 +11,7 @@
     <h1>O que você deseja?</h1>
     <section>
         <form action="post">
-            <input type="text" list="options" id="input-field" onkeyup="getOptions()">
+            <input type="text" list="options" id="input-field" onkeyup="gerenciarOptions()">
                 <datalist id="options">
                 <option value="Opção 1">
                 <option value="Opção 2">
@@ -19,7 +19,12 @@
                 <option value="Opção 4">
                 <option value="Opção 5">
                 </datalist>
+            <input type="text" class="hide" id="cursos">
         </form>
+
+        <section id="cursos-selecionados">
+
+        </section>
     </section>
 </body>
 <script src="../static/dados_compl_1.js"></script>
