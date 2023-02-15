@@ -20,7 +20,7 @@ function gerenciarOptions() {
     let inp = document.getElementById('input-field')
     let opt = document.getElementById('options')
     let data_list = document.getElementById('options')
-    let cursos = document.getElementById('cursos')
+    let cursos = document.getElementById('input-array')
 
     for (o = 0; o < opt.options.length; o++) {
         option = opt.options[o]
@@ -48,7 +48,7 @@ function excluirCurso(event) {
     cursos_selecionados.splice(index, 1);
 
     // Atualizar o formulário
-    let cursos = document.getElementById('cursos')
+    let cursos = document.getElementById('input-array')
     cursos.value = cursos_selecionados
 
     // Retornar a opção
