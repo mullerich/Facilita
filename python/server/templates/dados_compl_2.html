@@ -9,50 +9,48 @@
 </head>
 <body>
     <h1>Personalize sua experiência</h1>
-    <section>
-        <form action="post">
-            
-            <section id="regioes">
-            <h2>Escolha as regiões que você quer ser aprovado.</h2>
-            <input type="text" list="options" id="input-field" onkeyup="gerenciarOptions()">
-                <datalist id="options">
-                <option value="Opção 1">
-                <option value="Opção 2">
-                <option value="Opção 3">
-                <option value="Opção 4">
-                <option value="Opção 5">
-                </datalist>
-            <label for="input-array">Regiões</label>
-            <input type="text" class="hide" id="input-array">
-            <section id="cursos-selecionados"></section>
-            </section>
-
-            
-            <section id="turnos">
-                <h2>Escolha os turnos que você quer estudar</h2>
-                <label for="turnos"></label>
-                <input type="checkbox" id="Matutino"><label for="">Matutino</label>
-                <input type="checkbox" id="Vespertino"><label for="">Vespertino</label>
-                <input type="checkbox" id="Noturno"><label for="">Noturno</label>
-                <input type="checkbox" id="Integral"><label for="">Integral</label>
-                <input type="checkbox" id="EaD"><label for="">EaD</label>
-            </section>
-            
-            <section id="cotas">
-                <h2>Selecione os campos que você se adequa</h2>
-                <label for="turnos"></label>
-                <input type="checkbox" id="escola-pub"><label for="">estudei somente em escola pública</label>
-                <input type="checkbox" id="preto_pardo"><label for="">sou preto ou pardo</label>
-                <input type="checkbox" id="indigena"><label for="">sou indígena</label>
-                <input type="checkbox" id="deficiente"><label for="">sou deficiente</label>
-                <input type="checkbox" id="trans_trav"><label for="">sou Transexual, travesti ou transgênero</label>
-                <input type="checkbox" id="quilombola"><label for="">sou quilombola</label>
-            </section>
-
-        </form>
-
+    
+    <form action="", method="post">
         
-    </section>
+        {{ form.csrf_token }}
+        <section id="turnos">
+            <!-- <h2>Escolha os turnos que você quer estudar</h2>
+            <label for="turnos"></label>
+            <input type="checkbox" id="Matutino"><label for="">Matutino</label>
+            <input type="checkbox" id="Vespertino"><label for="">Vespertino</label>
+            <input type="checkbox" id="Noturno"><label for="">Noturno</label>
+            <input type="checkbox" id="Integral"><label for="">Integral</label>
+            <input type="checkbox" id="EaD"><label for="">EaD</label> -->
+            
+            {{ form.matutino(id="Matutino") }}<label for="":>Matutino</label>
+            {{ form.vespertino(id="Vespertino") }}<label for="":>Vespertino</label>
+            {{ form.noturno(id="Noturno") }}<label for="":>Noturno</label>
+            {{ form.integral(id="Integral") }}<label for="":>Integral</label>
+            {{ form.ead(id="EaD") }}<label for="":>Ead</label>
+                
+        </section>
+        
+        <section id="cotas">
+            <h2>Selecione os campos que você se adequa</h2>
+            <label for="turnos"></label>
+            <!-- <input type="checkbox" id="escola_pub"><label for="">estudei somente em escola pública</label>
+            <input type="checkbox" id="preto_pardo"><label for="">sou preto ou pardo</label>
+            <input type="checkbox" id="indigena"><label for="">sou indígena</label>
+            <input type="checkbox" id="deficiente"><label for="">sou deficiente</label>
+            <input type="checkbox" id="trans_trav"><label for="">sou Transexual, travesti ou transgênero</label>
+            <input type="checkbox" id="quilombola"><label for="">sou quilombola</label> -->
+
+            {{ form.escola_publica(id="Escola_Publica") }}<label for="">estudei somente em escola pública</label>
+            {{ form.preto_pardo(id="Preto_Pardo") }}<label for="">sou preto ou pardo</label>
+            {{ form.indigena(id="Indigena") }}<label for="">sou indígena</label>
+            {{ form.deficiente(id="Deficiente") }}<label for="">sou deficiente</label>
+            {{ form.trans_trav(id="Trans_Trav") }}<label for="">sou Transexual, travesti ou transgênero</label>
+            {{ form.quilombola(id="Quilombola") }}<label for="">sou quilombola</label>
+        </section>
+
+        <button type="submit">Enviar</button>
+    </form>
+        
 </body>
 <script src="../static/dados_compl_1.js"></script>
 

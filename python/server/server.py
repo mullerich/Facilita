@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect, url_for
 from flask_login import LoginManager, login_user
 from flask_hashing import Hashing
-from models.forms import LoginForm, CadastroForm
+from models.forms import LoginForm, CadastroForm, preferenciasVagasForm, preferenciasCursoForm
 import bd.aluno as aluno
 
 
@@ -50,6 +50,44 @@ def cadastro_page():
         return redirect(url_for('login_page'))
         
     return render_template('cadastro.html', form=form)
+
+
+@app.route('/preferencias/curso', methods=['POST', 'GET'])
+def preferencias_curso():
+    form = preferenciasCursoForm()
+    if form.validate_on_submit():
+        cursos = form.cursos.data.split(',')
+        bacharelado, licenciatura = form.bacharelado.data, form.licenciatura.data
+        tecnologico, abi = form.tecnologico.data, form.abi.data
+        print(cursos, bacharelado, licenciatura, tecnologico, abi)
+        # Implementar uma função que redireciona de acordo com as pendencias
+        return redirect(url_for('preferencias_vagas'))
+    
+    return render_template('dados_compl_1.html', form=form)
+
+
+@app.route('/preferencias/vagas', methods=['GET', 'POST'])
+def preferencias_vagas():
+    form = preferenciasVagasForm()
+    if form.validate_on_submit():
+        matutino = form.matutino.data
+        vespertino = form.vespertino.data
+        noturno = form.noturno.data
+        integral = form.integral.data
+        ead = form.ead.data
+
+        escola_publica = form.escola_publica.data
+        preto_pardo = form.preto_pardo.data
+        indigena = form.indigena.data
+        deficiente = form.deficiente.data
+        trans_trav = form.trans_trav.data
+        quilombola = form.quilombola.data
+
+        print(matutino, vespertino, noturno, integral, ead)
+        print(escola_publica, preto_pardo, indigena, deficiente, trans_trav, quilombola)
+        return redirect(url_for('home'))
+
+    return render_template('dados_compl_2.html', form=form)
 
 
 app.run()

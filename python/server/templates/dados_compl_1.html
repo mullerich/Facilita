@@ -10,7 +10,8 @@
 <body>
     <h1>O que você deseja?</h1>
     <section>
-        <form action="post">
+        <form action="" method="post">
+            {{ form.csrf_token }}
             <section id="cursos">
             <h2>Adicione os cursos que você deseja fazer</h2>
             <label for="input-field">Cursos</label>
@@ -22,17 +23,25 @@
                 <option value="Opção 4">
                 <option value="Opção 5">
                 </datalist>   
-            <input type="text" class="hide" id="input-array">
+            <!-- <input type="text" class="hide" id="input-array"> -->
+            {{ form.cursos(class="hide", id="input-array") }}
             <section id="cursos-selecionados"></section>
             </section>
 
             <section id="grau">
                 <h2>Selecione o grau de formação</h2>
-                <input type="checkbox" id="Bacharelado"><label for="">Bacharelado</label>
+                <!-- <input type="checkbox" id="Bacharelado"><label for="">Bacharelado</label>
                 <input type="checkbox" id="Licenciatura"><label for="">Licenciatura</label>
                 <input type="checkbox" id="Tecnologico"><label for="">Tecnológico</label>
-                <input type="checkbox" id="ABI"><label for="">Área Básica de Ingresso (ABI)</label>
+                <input type="checkbox" id="ABI"><label for="">Área Básica de Ingresso (ABI)</label> -->
+                {{ form.bacharelado(id="Bacharelado") }}<label for="">Bacharelado</label>
+                {{ form.licenciatura(id="Licenciatura") }}<label for="">Licenciatura</label>
+                {{ form.tecnologico(id="Tecnologico") }}<label for="">Tecnológico</label>
+                {{ form.abi(id="ABI") }}<label for="">Área Básica de Ingresso (ABI)</label>
+
             </section>
+
+            <button type="submit">Enviar</button>
         </form>
 
         

@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, DateField, PasswordField
+from wtforms import StringField, DateField, PasswordField, BooleanField
 from wtforms.validators import DataRequired
 
 
@@ -13,3 +13,29 @@ class CadastroForm(FlaskForm):
     email = StringField('email', validators=[DataRequired()])
     nascimento = DateField('nascimento', validators=[DataRequired()])
     senha = PasswordField('senha', validators=[DataRequired()])
+
+
+class preferenciasCursoForm(FlaskForm):
+    cursos = StringField('cursos', validators=[DataRequired()])
+    # grau de formação
+    bacharelado = BooleanField('bacharelado')
+    licenciatura = BooleanField('licenciatura')
+    tecnologico = BooleanField('tecnologico')
+    abi = BooleanField('abi')
+
+
+class preferenciasVagasForm(FlaskForm):
+    # turnos
+    matutino = BooleanField('matutino')
+    vespertino = BooleanField('vespertino')
+    noturno = BooleanField('noturno')
+    integral = BooleanField('integral')
+    ead = BooleanField('ead')
+
+    # perfil do usuario
+    escola_publica = BooleanField('escola_publica')
+    preto_pardo = BooleanField('preto_pardo')
+    indigena = BooleanField('indigena')
+    deficiente = BooleanField('deficiente')
+    trans_trav = BooleanField('trans_trav')
+    quilombola = BooleanField('quilombola')
