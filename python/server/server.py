@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect, url_for
 from flask_login import LoginManager, login_user, current_user
 from flask_hashing import Hashing
-from models.forms import LoginForm, CadastroForm, preferenciasVagasForm, preferenciasCursoForm
+from models.forms import notasForm, LoginForm, CadastroForm, preferenciasVagasForm, preferenciasCursoForm
 import bd.aluno as aluno
 
 
@@ -85,7 +85,6 @@ def preferencias_curso():
         
         user.alterar(dados)
 
-        # Implementar uma função que redireciona de acordo com as pendencias
         return pagina_pendencias()
     
     return render_template('dados_compl_1.html', form=form)
@@ -129,6 +128,46 @@ def preferencias_vagas():
         return pagina_pendencias()
 
     return render_template('dados_compl_2.html', form=form)
+
+
+@app.route('/preferencias/notas', methods=['POST', 'GET'])
+def preferencias_notas():
+    form = notasForm()
+    if form.validate_on_submit():
+        matematica = form.matematica.data
+        linguagens = form.linguagens.data
+        ciencias_natureza = form.ciencias_natureza.data
+        ciencias_humanas = form.ciencias_humanas.data
+        redacao = form.redacao.data
+
+        user = aluno.Aluno(current_user.get_id())
+        pendencias = user.pendencias
+        if 'preferencias_notas' in pendencias:
+            pendencias.remove('preferencias_notas')
+
+        dados = {
+            'notas': {'Matemática': matematica, 'Linguagens': linguagens,
+                      'Ciêncas Natureza': ciencias_natureza, 'Ciências Humanas': ciencias_humanas,
+                      'Redação': redacao},
+            'pendencias': pendencias
+        }
+
+        user.alterar(dados)
+        return pagina_pendencias()
+
+    return render_template('dados_notas.html', form=form)
+
+
+@app.route('/meuperfil')
+def perfil_user():
+    user = aluno.Aluno(current_user.get_id())
+    user = user.nome, user.email
+    return render_template('user.html', dados=user)
+
+
+@app.route('/meusdados')
+def dados_pessoais():
+    pass
 
 
 app.run()

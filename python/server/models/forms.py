@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import EmailField, StringField, DateField, PasswordField, BooleanField
+from wtforms import EmailField, StringField, DateField, PasswordField, BooleanField, DecimalField
 from wtforms.validators import DataRequired
 
 
@@ -39,3 +39,11 @@ class preferenciasVagasForm(FlaskForm):
     deficiente = BooleanField('deficiente')
     trans_trav = BooleanField('trans_trav')
     quilombola = BooleanField('quilombola')
+
+
+class notasForm(FlaskForm):
+    matematica = DecimalField()
+    linguagens = DecimalField()
+    ciencias_natureza = DecimalField()
+    ciencias_humanas = DecimalField()
+    redacao = DecimalField()

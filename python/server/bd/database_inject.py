@@ -15,16 +15,22 @@ def attrs_str(attrs_dict):
     string = ''
     for x in attrs_dict:
         lista = attrs_dict[x]
-        str_lista = '['
-        for attr in lista:
-            if attr != '':
-                str_lista += f'\"{attr}\", '
-        str_lista = str_lista[:-2] + ']'
-        if lista != []:
-            string += f"{x} = \'{str_lista}\', "
-        else:
-            string += f"{x} = \'[]\', "
-
+        if type(lista) == list:
+            str_lista = '['
+            for attr in lista:
+                if attr != '':
+                    str_lista += f'\"{attr}\", '
+            str_lista = str_lista[:-2] + ']'
+            if lista != []:
+                string += f"{x} = \'{str_lista}\', "
+            else:
+                string += f"{x} = \'[]\', "
+        
+        elif type(lista) == dict:
+            string += f"{x} = \'"+"{"
+            for y in lista:
+                string += f'\"{y}\": \"{lista[y]}\", '
+            string = string[:-2] + "}\', "
     return string[:-2]
 
 
