@@ -7,8 +7,8 @@ function gerarCursoSelecionado(nome) {
     curso.className = 'texto-curso'
     let close_botao = document.createElement('button')
     close_botao.innerText = 'x'
-    div.appendChild(curso)
     div.appendChild(close_botao)
+    div.appendChild(curso)
     secao.appendChild(div)
 
     close_botao.addEventListener('click', excluirCurso)

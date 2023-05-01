@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/dados_compl_1.css">
+    <link rel="stylesheet" href="../static/dados_compl.css">
     <title>Seus interesses</title>
 </head>
 <body>
     <h1>O que você deseja?</h1>
-    <section>
+    <section id="sup">
         <form action="" method="post">
             {{ form.csrf_token }}
             <section id="cursos">
@@ -34,10 +34,10 @@
                 <input type="checkbox" id="Licenciatura"><label for="">Licenciatura</label>
                 <input type="checkbox" id="Tecnologico"><label for="">Tecnológico</label>
                 <input type="checkbox" id="ABI"><label for="">Área Básica de Ingresso (ABI)</label> -->
-                {{ form.bacharelado(id="Bacharelado") }}<label for="">Bacharelado</label>
-                {{ form.licenciatura(id="Licenciatura") }}<label for="">Licenciatura</label>
-                {{ form.tecnologico(id="Tecnologico") }}<label for="">Tecnológico</label>
-                {{ form.abi(id="ABI") }}<label for="">Área Básica de Ingresso (ABI)</label>
+                <div class="grau">{{ form.bacharelado(id="Bacharelado") }}<label for="">Bacharelado</label></div>
+                <div class="grau">{{ form.licenciatura(id="Licenciatura") }}<label for="">Licenciatura</label></div>
+                <div class="grau">{{ form.tecnologico(id="Tecnologico") }}<label for="">Tecnológico</label></div>
+                <div class="grau">{{ form.abi(id="ABI") }}<label for="">Área Básica de Ingresso (ABI)</label></div>
 
             </section>
 
