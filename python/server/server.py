@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect, url_for
-from flask_login import LoginManager, login_user
+from flask_login import LoginManager, login_user, current_user
 from flask_hashing import Hashing
 from models.forms import LoginForm, CadastroForm, preferenciasVagasForm, preferenciasCursoForm
 import bd.aluno as aluno
@@ -16,6 +16,15 @@ def load_user(_id):
     return aluno.Aluno(_id)
 
 hashing = Hashing(app)
+
+
+def pagina_pendencias():
+    user = aluno.Aluno(current_user.get_id())
+    print(user.pendencias)
+    if user.pendencias != []:
+        return redirect(url_for(user.pendencias[0]))
+    else:
+        return redirect(url_for('home'))
 
 # ------------------ PÁGINAS ----------------------
 
@@ -34,7 +43,7 @@ def login_page():
         if hashing.check_value(user.senha, senha):
             login_user(user)
             print('Usuário Logado')
-            return redirect(url_for('home'))
+            return pagina_pendencias()
     return render_template('login.html', form=form)
 
 
@@ -59,9 +68,25 @@ def preferencias_curso():
         cursos = form.cursos.data.split(',')
         bacharelado, licenciatura = form.bacharelado.data, form.licenciatura.data
         tecnologico, abi = form.tecnologico.data, form.abi.data
-        print(cursos, bacharelado, licenciatura, tecnologico, abi)
+        
+        # Atualizando no banco de dados
+        graus = ["Licenciatura" if licenciatura else "", "Bacharelado" if bacharelado else "", "Tecnológico" if tecnologico else "", "Área Básica de Ingresso (ABI)" if abi else ""]
+        
+        # Remover pendencia
+        user = aluno.Aluno(current_user.get_id())
+        pendencias = user.pendencias
+        if 'preferencias_curso' in pendencias:
+            pendencias.remove('preferencias_curso')
+        dados = {
+            'cursos': cursos,
+            'grau': graus,
+            'pendencias': pendencias
+        }
+        
+        user.alterar(dados)
+
         # Implementar uma função que redireciona de acordo com as pendencias
-        return redirect(url_for('preferencias_vagas'))
+        return pagina_pendencias()
     
     return render_template('dados_compl_1.html', form=form)
 
@@ -85,7 +110,23 @@ def preferencias_vagas():
 
         print(matutino, vespertino, noturno, integral, ead)
         print(escola_publica, preto_pardo, indigena, deficiente, trans_trav, quilombola)
-        return redirect(url_for('home'))
+        
+        turnos = ["Matutino" if matutino else "", "Vespertino" if vespertino else "", "Noturno" if noturno else "", "Integral" if integral else "", "EaD" if ead else ""]
+        cotas = ["Escola Pública" if escola_publica else "", "Preto ou Pardo" if preto_pardo else "", "Indígena" if indigena else "", "Deficiente" if deficiente else "", "Transexual, Transgênero ou Travesti" if trans_trav else "", "Quilombola" if quilombola else ""]
+        user = aluno.Aluno(current_user.get_id())
+        pendencias = user.pendencias
+        if 'preferencias_vagas' in pendencias:
+            pendencias.remove('preferencias_vagas')
+
+        dados = {
+            'turnos': turnos,
+            'cotas': cotas,
+            'pendencias': pendencias
+        }
+
+        user.alterar(dados)
+
+        return pagina_pendencias()
 
     return render_template('dados_compl_2.html', form=form)
 

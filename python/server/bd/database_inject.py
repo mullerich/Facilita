@@ -5,9 +5,26 @@ connection = pymysql.connect(host='localhost', user='root', password='', databas
 
 
 def attrs_str(attrs_dict):
+    
+
+    # str_graus = 
+    #     for grau in graus:
+    #         if grau != '':
+    #             str_graus += f'\"{grau}\", '
+    #     str_graus = str_graus[:-2] + ']'
     string = ''
     for x in attrs_dict:
-        string += f"{x} = '{attrs_dict[x]}', "
+        lista = attrs_dict[x]
+        str_lista = '['
+        for attr in lista:
+            if attr != '':
+                str_lista += f'\"{attr}\", '
+        str_lista = str_lista[:-2] + ']'
+        if lista != []:
+            string += f"{x} = \'{str_lista}\', "
+        else:
+            string += f"{x} = \'[]\', "
+
     return string[:-2]
 
 

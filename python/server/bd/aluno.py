@@ -1,10 +1,14 @@
 from bd.database_inject import insert, update
 from bd.database_consult import request
 
+# from database_inject import insert, update
+# from database_consult import request
+import json
+
 
 def registrar(nome, nascimento, email, senha):
     try:
-        insert('usuarios', ['nome', 'nascimento', 'email', 'senha'], [nome, nascimento, email, senha])
+        insert('usuarios', ['nome', 'nascimento', 'email', 'senha', 'pendencias'], [nome, nascimento, email, senha, '["preferencias_curso", "preferencias_vagas"]'])
         return True
     except Exception as e:
         if 'Duplicate entry' in str(e):
@@ -51,7 +55,7 @@ class Aluno():
         self.turnos = dados[9]
         self.cotas = dados[10]
         self.grau = dados[11]
-        self.pendencias = dados[12]
+        self.pendencias = json.loads(dados[12])
 
 
     def alterar(self, attrs):
@@ -60,8 +64,8 @@ class Aluno():
 
     def descricao(self):
         # Traz uma descrição resumida e em linguagem humana sobre o aluno
-        print(f'O aluno {self.nome} (id={self.id}), nascido em {self.nascimento}, possui uma conta {self.tipo_conta}. Suas cidades de interesse são {self.cidades}')
-        print(self.dados)
+        print(f'O aluno {self.nome} (id={self.id}), nascido em {self.nascimento}, possui uma conta {self.tipo_conta}. Suas cidades de interesse são {self.cidades}\n', f'pendências: {self.pendencias}')
+        # print(self.dados)
 
 
 """attrs = {
@@ -75,4 +79,8 @@ q2 = {
 }
 
 erich = Aluno(1)
-erich.alterar(q2)"""
+erich.alterar(q2)
+"""
+
+erich = Aluno(2)
+# print(erich.pendencias, type(erich.pendencias))
