@@ -1,5 +1,6 @@
 from bd.database_inject import insert, update
 from bd.database_consult import request
+from flask_login import UserMixin
 
 # from database_inject import insert, update
 # from database_consult import request
@@ -8,7 +9,7 @@ import json
 
 def registrar(nome, nascimento, email, senha):
     try:
-        insert('usuarios', ['nome', 'nascimento', 'email', 'senha', 'pendencias'], [nome, nascimento, email, senha, '["preferencias_curso", "preferencias_vagas"]'])
+        insert('usuarios', ['nome', 'nascimento', 'email', 'senha', 'pendencias'], [nome, nascimento, email, senha, '["preferencias_curso", "preferencias_vagas", "preferencias_notas"]'])
         return True
     except Exception as e:
         if 'Duplicate entry' in str(e):
@@ -21,23 +22,23 @@ def buscar(_id=None, email=None):
     return request('*', 'usuarios', f'id = {_id}' if _id else f"email = '{email}'", limit=1)
 
 
-class Aluno():
+class Aluno(UserMixin):
     """Acessar e escrever informações sobre o aluno"""
 
-    @property
-    def is_authencticated(self):
-        return True
+    # @property
+    # def is_authencticated(self):
+    #     return True
     
-    @property
-    def is_active(self):
-        return True
+    # @property
+    # def is_active(self):
+    #     return True
 
-    @property
-    def is_anonymous(self):
-        return False
+    # @property
+    # def is_anonymous(self):
+    #     return False
 
-    def get_id(self):
-        return str(self.id)
+    # def get_id(self):
+    #     return str(self.id)
 
     def __init__(self, _id):
         dados = buscar(_id)
@@ -49,12 +50,12 @@ class Aluno():
         self.senha = dados[4]
 
         self.tipo_conta = dados[5]
-        self.cursos = dados[6]
-        self.cidades = dados[7]
-        self.notas = dados[8]
-        self.turnos = dados[9]
-        self.cotas = dados[10]
-        self.grau = dados[11]
+        self.cursos = json.loads(dados[6])
+        self.cidades = json.loads(dados[7])
+        self.notas = json.loads(dados[8])
+        self.turnos = json.loads(dados[9])
+        self.cotas = json.loads(dados[10])
+        self.grau = json.loads(dados[11])
         self.pendencias = json.loads(dados[12])
 
 
@@ -82,5 +83,7 @@ erich = Aluno(1)
 erich.alterar(q2)
 """
 
-erich = Aluno(2)
+# erich = Aluno(2)
+
 # print(erich.pendencias, type(erich.pendencias))
+# print(buscar())

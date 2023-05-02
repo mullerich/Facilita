@@ -15,7 +15,7 @@
             <section id="cursos">
             <h2>Adicione os cursos que você deseja fazer</h2>
             <label for="input-field">Cursos</label>
-            <input type="text" list="options" id="input-field" onkeyup="gerenciarOptions()">
+            <input type="text" list="options" id="input-field" onchange="gerenciarOptions()">
                 <datalist id="options">
                 <option value="Opção 1">
                 <option value="Opção 2">
@@ -24,8 +24,15 @@
                 <option value="Opção 5">
                 </datalist>   
             <!-- <input type="text" class="hide" id="input-array"> -->
-            {{ form.cursos(class="hide", id="input-array") }}
-            <section id="cursos-selecionados"></section>
+            {{ form.cursos(class="hide", id="input-array", value=cursos) }}
+            <section id="cursos-selecionados">
+                <!-- {% for curso in cursos %}
+                    <div class="botao">
+                        <button>X</button>
+                        <p class="texto-curso">{{ curso }}</p>
+                    </div>
+                {% endfor %} -->
+            </section>
             </section>
 
             <section id="grau">
@@ -34,10 +41,10 @@
                 <input type="checkbox" id="Licenciatura"><label for="">Licenciatura</label>
                 <input type="checkbox" id="Tecnologico"><label for="">Tecnológico</label>
                 <input type="checkbox" id="ABI"><label for="">Área Básica de Ingresso (ABI)</label> -->
-                <div class="grau">{{ form.bacharelado(id="Bacharelado") }}<label for="">Bacharelado</label></div>
-                <div class="grau">{{ form.licenciatura(id="Licenciatura") }}<label for="">Licenciatura</label></div>
-                <div class="grau">{{ form.tecnologico(id="Tecnologico") }}<label for="">Tecnológico</label></div>
-                <div class="grau">{{ form.abi(id="ABI") }}<label for="">Área Básica de Ingresso (ABI)</label></div>
+                <div class="grau">{{ form.bacharelado(id="Bacharelado", checked=dados['bacharelado']) }}<label for="">Bacharelado</label></div>
+                <div class="grau">{{ form.licenciatura(id="Licenciatura", checked=dados['licenciatura']) }}<label for="">Licenciatura</label></div>
+                <div class="grau">{{ form.tecnologico(id="Tecnologico", checked=dados['tecnologico']) }}<label for="">Tecnológico</label></div>
+                <div class="grau">{{ form.abi(id="ABI", checked=dados['abi']) }}<label for="">Área Básica de Ingresso (ABI)</label></div>
 
             </section>
 
@@ -48,5 +55,6 @@
     </section>
 </body>
 <script src="../static/dados_compl_1.js"></script>
+
 
 </html>
