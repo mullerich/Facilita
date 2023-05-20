@@ -30,6 +30,10 @@ def home():
     return render_template('home.html')
 
 
+@app.route("/busca")
+def search():
+    return render_template('search.html')
+
 @app.route("/pendencias")
 def pendencias_page():
     user = aluno.Aluno(current_user.get_id())
