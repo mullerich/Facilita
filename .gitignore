@@ -2,3 +2,6 @@
 .idea
 venv
 _pycache_
+python/server/__pycache__
+python/server/bd/__pycache__
+python/server/models/__pycache__

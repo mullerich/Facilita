@@ -1,7 +1,7 @@
 import pymysql
 
 # Conectando ao banco de dadps
-connection = pymysql.connect(host='localhost', user='root', password='', database='sisu')
+connection = pymysql.connect(host='sql10.freesqldatabase.com', user='sql10620948', password='nCZyq6rlFj', database='sql10620948')
 
 
 def attrs_str(attrs_dict):

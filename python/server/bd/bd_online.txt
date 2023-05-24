@@ -1,0 +1,12 @@
+nome: bd_sisu
+usuario: erich_admin
+senha: muller2014
+senha2:  asfB!na$*9h5adwd
+email: erichmdutra@gmail.com
+
+
+Host: sql10.freesqldatabase.com
+Database name: sql10620948
+Database user: sql10620948
+Database password: nCZyq6rlFj
+Port number: 3306
