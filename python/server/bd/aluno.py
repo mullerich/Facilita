@@ -50,13 +50,13 @@ class Aluno(UserMixin):
         self.senha = dados[4]
 
         self.tipo_conta = dados[5]
-        self.cursos = json.loads(dados[6])
-        self.cidades = json.loads(dados[7])
-        self.notas = json.loads(dados[8])
-        self.turnos = json.loads(dados[9])
-        self.cotas = json.loads(dados[10])
-        self.grau = json.loads(dados[11])
-        self.pendencias = json.loads(dados[12])
+        self.cursos = '' if dados[6] == None else json.loads(dados[6])
+        self.cidades = '' if dados[7] == None else json.loads(dados[7])
+        self.notas = '' if dados[8] == None else json.loads(dados[8])
+        self.turnos = '' if dados[9] == None else json.loads(dados[9])
+        self.cotas = '' if dados[10] == None else json.loads(dados[10])
+        self.grau = '' if dados[11] == None else json.loads(dados[11])
+        self.pendencias = '' if dados[12] == None else json.loads(dados[12])
 
 
     def alterar(self, attrs):
@@ -83,7 +83,6 @@ erich = Aluno(1)
 erich.alterar(q2)
 """
 
-# erich = Aluno(2)
 
 # print(erich.pendencias, type(erich.pendencias))
 # print(buscar())

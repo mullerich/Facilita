@@ -18,3 +18,6 @@ create table usuarios (
     
     primary key (id)
 );
+
+/* testes */
+select * from usuarios;
