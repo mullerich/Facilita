@@ -14,78 +14,87 @@
             <input type="submit">
         </section>
         
-        <h2>Filtros</h2>
-        <section id="filtros">  
-            <section>
-                <h3>Grau</h3>
-                
-                <section class="checkbox">
-                <div><input type="checkbox" id=""><label for="">Bacharelado</label></div>
-                <div><input type="checkbox" id=""><label for="">Licenciatura</label></div>
-                <div><input type="checkbox" id=""><label for="">ABI</label></div>
-                <div><input type="checkbox" id=""><label for="">Tecnológico</label></div>
-                </section>
-            </section>
+    <main>
+    <section class="coluna-filtro">
+        <div><h2>Filtros</h2><button type="button" id="toggle-filtro">x</button></div>
+        <section id="secao-filtros" class="hidden">
+                    <section id="filtros">  
+                <section>
+                    <h3>Grau</h3>
                     
-            <section>
-                <h3>Cotas</h3>
-
-                <section class="checkbox">
-                <div><input type="checkbox" id=""><label for="">Preto/Pardo/Indígena</label></div>
-                <div><input type="checkbox" id=""><label for="">Baixa renda</label></div>
-                <div><input type="checkbox" id=""><label for="">Escola Pública</label></div>
-                <div><input type="checkbox" id=""><label for="">Deficiente</label></div>
-                <div><input type="checkbox" id=""><label for="">Transexual/Travesti/Transgênero</label></div>
-                <div><input type="checkbox" id=""><label for="">Quilombola</label></div>
+                    <section class="checkbox">
+                    <div><input type="checkbox" id=""><label for="">Bacharelado</label></div>
+                    <div><input type="checkbox" id=""><label for="">Licenciatura</label></div>
+                    <div><input type="checkbox" id=""><label for="">ABI</label></div>
+                    <div><input type="checkbox" id=""><label for="">Tecnológico</label></div>
+                    </section>
                 </section>
-            </section>
+                        
+                <section>
+                    <h3>Cotas</h3>
+    
+                    <section class="checkbox">
+                    <div><input type="checkbox" id=""><label for="">Preto/Pardo/Indígena</label></div>
+                    <div><input type="checkbox" id=""><label for="">Baixa renda</label></div>
+                    <div><input type="checkbox" id=""><label for="">Escola Pública</label></div>
+                    <div><input type="checkbox" id=""><label for="">Deficiente</label></div>
+                    <div><input type="checkbox" id=""><label for="">Transexual/Travesti/Transgênero</label></div>
+                    <div><input type="checkbox" id=""><label for="">Quilombola</label></div>
+                    </section>
+                </section>
+                        
+                <section>
+                    <h3>Turnos</h3>
                     
-            <section>
-                <h3>Turnos</h3>
-                
-                <section class="checkbox">
-                <div><input type="checkbox" id=""><label for="">Matutino</label></div>
-                <div><input type="checkbox" id=""><label for="">Vespertino</label></div>
-                <div><input type="checkbox" id=""><label for="">Noturno</label></div>
-                <div><input type="checkbox" id=""><label for="">Integral</label></div>
-                <div><input type="checkbox" id=""><label for="">EaD</label></div>
-            </section>
+                    <section class="checkbox">
+                    <div><input type="checkbox" id=""><label for="">Matutino</label></div>
+                    <div><input type="checkbox" id=""><label for="">Vespertino</label></div>
+                    <div><input type="checkbox" id=""><label for="">Noturno</label></div>
+                    <div><input type="checkbox" id=""><label for="">Integral</label></div>
+                    <div><input type="checkbox" id=""><label for="">EaD</label></div>
+                </section>
             </section>
                     
         </section>
+        </section>
+    
+    </section>
+    
     </form>
 
-    <main>
-        <h2>Principais Resultados</h2>
-        <section>        
-            <a href="#">
+    <section class="resultados">
+    <h2>Principais Resultados</h2>
+    <section id="resultados">        
+        <a href="#">
+        <div class="card">
+            <h3>Nome Curso</h3>
+            <span>UFMG</span>
+            <p>grau - turno</p>
+            <p>modalidade 000,00</p>
+        </div>
+        </a>
+
+        <a href="#">
             <div class="card">
                 <h3>Nome Curso</h3>
                 <span>UFMG</span>
                 <p>grau - turno</p>
                 <p>modalidade 000,00</p>
             </div>
-            </a>
+        </a>
 
-            <a href="#">
-                <div class="card">
-                    <h3>Nome Curso</h3>
-                    <span>UFMG</span>
-                    <p>grau - turno</p>
-                    <p>modalidade 000,00</p>
-                </div>
-            </a>
-
-            <a href="#">
-                <div class="card">
-                    <h3>Nome Curso</h3>
-                    <span>UFMG</span>
-                    <p>grau - turno</p>
-                    <p>modalidade 000,00</p>
-                </div>
-            </a>
-        </section>
-        
+        <a href="#">
+            <div class="card">
+                <h3>Nome Curso</h3>
+                <span>UFMG</span>
+                <p>grau - turno</p>
+                <p>modalidade 000,00</p>
+            </div>
+        </a>
+    </section>
+    </section>
     </main>
 </body>
+
+<script src="../static/search.js"></script>
 </html>

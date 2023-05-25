@@ -1,3 +1,19 @@
+* {
+    margin: 0px;
+}
+
+section#filtros > section {
+    gap: 15px;
+}
+
+section.checkbox {
+    gap: 5px;
+}
+
+section.checkbox label {
+    margin-left: 5px;
+}
+
 form input[type="text"] {
     width: 50vw;
     max-width: 500px;
@@ -39,8 +55,8 @@ td {
     display: block;
 }
 
-main, form h2 {
-    margin: 50px;
+h2 {
+    margin: 30px 50px;
 }
 
 /* form {
@@ -49,18 +65,29 @@ main, form h2 {
     align-items: center;
 } */
 
-section {
+section.coluna-filtro {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
+}
+
+section#resultados {
+    display: flex;
     flex-direction: row;
-    gap: 20px;
+    flex-wrap: wrap;
+    margin: 0px 50px;
+    gap: 30px;
 }
 
 section#search {
     gap: 10px;
-    margin-top: 30px;
+    margin: 30px 0px;
     display: flex;
     justify-content: center;
+}
+
+section#secao-filtros {
+    margin-bottom: 30px;
 }
 
 section#filtros {
@@ -75,13 +102,16 @@ section#filtros {
 
 section#filtros > section {
     display: flex;
-    gap: 0px;
     flex-direction: column;
 }
 
 section#filtros section.checkbox {
     display: flex;
     flex-direction: column;
+}
+
+section.coluna-filtro button {
+    display: none;
 }
 
 ul {
@@ -103,4 +133,43 @@ div.card {
     min-width: 130px;
     max-width: 250px;
     flex-grow: 1;
+}
+
+
+@media (max-width: 625px) {
+    .hidden {
+        display: none;
+    }
+    
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    main.paused {
+        flex-direction: row;
+    }
+
+    section#secao-filtros {
+        flex-direction: column;
+        gap: 0px;
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.315);
+    }
+
+    div > h2 {
+        display: inline;
+    }
+
+    section#filtros {
+        flex-direction: column;
+        gap: 10px;
+        margin: 0px;
+        padding: 30px 50px;
+    }
+
+    button#toggle-filtro {
+        position: inherit;
+        display: inline;
+    }
+
 }
