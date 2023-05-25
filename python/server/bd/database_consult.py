@@ -1,8 +1,5 @@
-import pymysql
-
-# Conectando ao banco de dadps
-local = True
-connection = pymysql.connect(host='localhost' if local else 'sql10.freesqldatabase.com', user='root' if local else 'sql10620948', password='' if local else'nCZyq6rlFj', database='sql10620948')
+import bd.connection_config as bd_connection
+connection = bd_connection.createConnection()
 cursor = connection.cursor()
 
 def sql_constructor(select='*', _from='', where=None, group_by=None, order_by=None, limit=None):
